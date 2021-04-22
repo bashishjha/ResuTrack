@@ -1,0 +1,19 @@
+<div class="card-body container">
+  <form [formGroup]="loginUser" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Email address</label>
+      <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Password" required>
+    </div>
+    <small class="form-text text-muted">We'll never share your email & password with anyone else.</small>
+    <div>
+      <button type="submit"  [disabled]="!loginUser.valid" class="btn btn-primary">Submit</button><br><br>
+    </div>
+    
+    
+</form>
+<button routerLink="register" class="btn btn-primary">New user Registration!</button>
+</div>

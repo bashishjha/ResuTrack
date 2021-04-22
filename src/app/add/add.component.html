@@ -1,0 +1,63 @@
+
+<!-- <div class=" card-body text-center" style="font-family:initial; font-size: xx-large; font-style: unset; flex-grow: unset;">Add new record</div> -->
+<div class="card-body">
+    <div *ngIf="msg" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Record successfully added.</strong>
+        <button (click)="alertClose()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <form [formGroup]="addResume" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Company Name</label>
+                <input type="text" class="form-control" formControlName="company" required>
+            </div>
+            <div class="form-group  col-md-6">
+                <label>Role</label>
+                <input type="text" class="form-control" formControlName="jd" placeholder="SDE/SE/SDET/Analyst/..." required>
+            </div>
+        </div>
+       
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Applied Date</label>
+                <input type="date" class="form-control" formControlName="date" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Resume Link</label>
+                <input type="text" class="form-control" formControlName="resume" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Rounds Cleared</label>
+                <input type="number" class="form-control" formControlName="rounds" placeholder="Number of Rounds Cleared">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6 card-body">
+                <label>Applied via Referral&nbsp;&nbsp;</label>
+                <div class="badge">
+                    <input type="radio" value="Yes" formControlName="apply"> Yes&nbsp;&nbsp;
+                    <input type="radio" value="No" formControlName="apply"> No
+                </div>
+            </div>
+            <div class="form-group  col-md-6 card-body">
+                <label>&nbsp;Selected&nbsp;&nbsp;</label>
+                <div class="badge" >
+                    <input type="radio" value="Yes" formControlName="result"> Yes&nbsp;&nbsp;
+                    <input type="radio" value="No" formControlName="result"> No
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Feedback</label>
+            <textarea rows="3" cols="5" class="form-control" formControlName="feedback"></textarea>
+        </div>
+
+        <button type="submit" [disabled]="!addResume.valid" class="btn btn-success">Submit</button>
+
+    </form>
+</div>
