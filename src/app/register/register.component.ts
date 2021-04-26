@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(){
     this.resumeServie.addUser(this.registerUser.value).subscribe((result)=>{
       console.log(result);
+      this.registerUser.reset({});
       
     })
     

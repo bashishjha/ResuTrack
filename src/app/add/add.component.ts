@@ -27,10 +27,6 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(){   
-    this.resu.getUser().subscribe((result)=>{
-      console.log(result);
-      
-    }) 
     this.resu.addList(this.addResume.value).subscribe((result)=>{
       console.log("result",result);
       this.msg=true;

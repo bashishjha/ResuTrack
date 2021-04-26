@@ -1,27 +1,27 @@
 <div class="card-body">
-  <table class="table table-striped table-responsive-xl">
+  <table class="table table-striped text-center table-responsive-xl">
     <thead>
       <tr>
-        <th scope="col">No.</th>
-        <th scope="col">Applied Date</th>
-        <th scope="col">Comapny Name</th>
-        <th scope="col">Position</th>
-        <th scope="col">Resume Link</th>
-        <th scope="col">Referral</th>
-        <th scope="col">No of Rounds cleared</th>
-        <th scope="col">Result</th>
-        <th scope="col">Feedback</th>
-        <th scope="col">Update</th>
-        <th scope="col">Delete</th>
+        <th scope="col" class="header">#</th>
+        <th scope="col" class="header">Date</th>
+        <th scope="col" class="header">Comapny</th>
+        <th scope="col" class="header">Position</th>
+        <th scope="col" class="header">Resume</th>
+        <th scope="col" class="header">Referral</th>
+        <th scope="col" class="header">Rounds</th>
+        <th scope="col" class="header">Selected</th>
+        <th scope="col" class="header">Feedback</th>
+        <th scope="col" class="header">Update</th>
+        <th scope="col" class="header">Delete</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of records">
         <td scope="col">{{item.id}}</td>
-        <td scope="col">{{item.date}}</td>
+        <td scope="col" style="width: 10%;">{{item.date}}</td>
         <td scope="col">{{item.company}}</td>
         <td scope="col">{{item.jd}}</td>
-        <td scope="col">{{item.resume}}</td>
+        <td scope="col"><a href="{{item.resume}}">{{item.company}} Resume</a></td>
         <td scope="col">{{item.apply}}</td>
         <td scope="col">{{item.rounds}}</td>
         <td scope="col">{{item.result}}</td>
